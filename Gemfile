@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 # TODO this is the PR that is removing the functionality from Solidus.
 # Once that PR is merged in master, this can be changed.
 gem 'solidus', github: 'nebulab/solidus', branch: 'no-product-add-at-shipments'
 
-gem 'solidus_auth_devise'
 gem 'deface', require: false
+gem 'solidus_auth_devise'
 
 gem 'rails', '~> 5.1.0' # HACK: for broken bundler dependency resolution
 

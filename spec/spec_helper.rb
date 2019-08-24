@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Run Coverage report
 require 'simplecov'
 SimpleCov.start do
@@ -13,7 +15,7 @@ end
 # Configure Rails Environment
 ENV['RAILS_ENV'] = 'test'
 
-require File.expand_path('../dummy/config/environment.rb', __FILE__)
+require File.expand_path('dummy/config/environment.rb', __dir__)
 
 require 'rspec/rails'
 require 'database_cleaner'
@@ -34,7 +36,7 @@ require 'spree/testing_support/url_helpers'
 require 'solidus_shipments_add_product/factories'
 
 RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 
   # Infer an example group's spec type from the file location.
   config.infer_spec_type_from_file_location!
