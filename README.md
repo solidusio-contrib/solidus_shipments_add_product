@@ -1,7 +1,9 @@
-SolidusShipmentsAddProduct
+Solidus Shipments Add Product
 ==========================
 
-Introduction goes here.
+This extension brings back the `add product` functionality to the `Shipments` tab in the `admin/order` page.
+
+This functionality was removed from Solidus backend with https://github.com/solidusio/solidus/pull/3214. See also https://github.com/solidusio/solidus/pull/3099 for motivations.
 
 Installation
 ------------
@@ -9,7 +11,7 @@ Installation
 Add solidus_shipments_add_product to your Gemfile:
 
 ```ruby
-gem 'solidus_shipments_add_product'
+gem 'solidus_shipments_add_product', github: 'solidusio-contrib/solidus_shipments_add_product'
 ```
 
 Bundle your dependencies and run the installation generator:
@@ -29,11 +31,11 @@ bundle
 bundle exec rake
 ```
 
-When testing your applications integration with this extension you may use it's factories.
+When testing your applications integration with this extension you may use its factories.
 Simply add this require statement to your spec_helper:
 
 ```ruby
 require 'solidus_shipments_add_product/factories'
 ```
 
-Copyright (c) 2019 [name of extension creator], released under the New BSD License
+Copyright (c) 2019 [Nebulab](https://nebulab.it), released under the [New BSD License](https://github.com/solidusio-contrib/solidus_shipments_add_product/blob/master/LICENSE.md)
