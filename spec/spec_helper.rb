@@ -19,7 +19,8 @@ require File.expand_path('dummy/config/environment.rb', __dir__)
 
 require 'rspec/rails'
 require 'database_cleaner'
-require 'ffaker'
+
+require 'solidus_support/extension/feature_helper'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
