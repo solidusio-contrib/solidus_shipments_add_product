@@ -2,9 +2,8 @@
 
 source 'https://rubygems.org'
 
-# TODO this is the PR that is removing the functionality from Solidus.
-# Once that PR is merged in master, this can be changed.
-gem 'solidus', github: 'nebulab/solidus', branch: 'no-product-add-at-shipments'
+# currently this gem extension is compatible only with Solidus master:
+gem 'solidus', github: 'nebulab/solidus', branch: 'master'
 
 gem 'deface', require: false
 gem 'solidus_auth_devise'
