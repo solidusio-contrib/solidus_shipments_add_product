@@ -6,9 +6,10 @@ describe 'Order shipments page', type: :feature do
   stub_authorization!
 
   let!(:order) { create :order_ready_to_ship }
-  let!(:product) { create(:product_in_stock) }
+  let!(:product) { create(:product) }
 
   before do
+    product.master.stock_items << build(:stock_item, stock_location: Spree::StockLocation.last)
     visit spree.edit_admin_order_path(order)
   end
 
