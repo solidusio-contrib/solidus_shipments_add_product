@@ -1,26 +1,15 @@
 # frozen_string_literal: true
 
-# Run Coverage report
-require 'simplecov'
-SimpleCov.start do
-  add_filter 'spec/dummy'
-  add_group 'Controllers', 'app/controllers'
-  add_group 'Helpers', 'app/helpers'
-  add_group 'Mailers', 'app/mailers'
-  add_group 'Models', 'app/models'
-  add_group 'Views', 'app/views'
-  add_group 'Libraries', 'lib'
-end
-
 # Configure Rails Environment
 ENV['RAILS_ENV'] = 'test'
 
+# Run Coverage report
+require 'solidus_dev_support/rspec/coverage'
+
 require File.expand_path('dummy/config/environment.rb', __dir__)
 
-require 'rspec/rails'
-require 'database_cleaner'
-
-require 'solidus_support/extension/feature_helper'
+# Requires factories and other useful helpers defined in spree_core.
+require 'solidus_dev_support/rspec/feature_helper'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -63,9 +52,10 @@ RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
-  # Capybara javascript drivers require transactional fixtures set to false, and we use DatabaseCleaner
-  # to cleanup after each test instead.  Without transactional fixtures set to false the records created
-  # to setup a test will be unavailable to the browser, which runs under a separate server instance.
+  # Capybara javascript drivers require transactional fixtures set to false, and we use
+  # DatabaseCleaner to cleanup after each test instead.  Without transactional fixtures set to
+  # false the records created to setup a test will be unavailable to the browser, which runs under
+  # a separate server instance.
   config.use_transactional_fixtures = false
 
   # Ensure Suite is set to use transactions for speed.
@@ -74,14 +64,15 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with :truncation
   end
 
-  # Before each spec check if it is a Javascript test and switch between using database transactions or not where necessary.
-  config.before :each do
+  # Before each spec check if it is a Javascript test and switch between using database
+  # transactions or not where necessary.
+  config.before do
     DatabaseCleaner.strategy = RSpec.current_example.metadata[:js] ? :truncation : :transaction
     DatabaseCleaner.start
   end
 
   # After each spec clean the database.
-  config.after :each do
+  config.after do
     DatabaseCleaner.clean
   end
 

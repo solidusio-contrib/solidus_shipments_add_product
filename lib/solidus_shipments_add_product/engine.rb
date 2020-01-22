@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
+require 'spree/core'
+
 module SolidusShipmentsAddProduct
   class Engine < Rails::Engine
-    require 'spree/core'
-    isolate_namespace Spree
+    include SolidusSupport::EngineExtensions::Decorators
+
+    isolate_namespace ::Spree
+
     engine_name 'solidus_shipments_add_product'
 
     # use rspec for tests

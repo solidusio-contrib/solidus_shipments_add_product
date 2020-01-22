@@ -1,0 +1,5 @@
+bump:
+  recurse: false
+  file: 'lib/solidus_shipments_add_product/version.rb'
+  message: Bump SolidusShipmentsAddProduct to %{version}
+  tag: true
