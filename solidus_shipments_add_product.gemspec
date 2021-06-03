@@ -7,7 +7,8 @@ Gem::Specification.new do |s|
   s.name        = 'solidus_shipments_add_product'
   s.version     = SolidusShipmentsAddProduct::VERSION
   s.summary     = 'Adds back "add product" button in admin/order_shipments page'
-  s.description = 'Solidus retrocompatibility extension that allows admins to add products directly in the admin/order_shipments page'
+  s.description = 'Solidus retrocompatibility extension that allows admins
+                    to add products directly in the admin/order_shipments page'
   s.license     = 'BSD-3-Clause'
 
   s.author    = 'Andrea Longhi'
