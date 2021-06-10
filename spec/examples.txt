@@ -1,0 +1,4 @@
+example_id                                         | status | run_time     |
+-------------------------------------------------- | ------ | ------------ |
+./spec/features/admin/order_shipments_spec.rb[1:1] | passed | 4.21 seconds |
+./spec/features/admin/order_shipments_spec.rb[1:2] | passed | 2.28 seconds |

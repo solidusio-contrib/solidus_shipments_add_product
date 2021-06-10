@@ -8,7 +8,7 @@ gem 'solidus', github: 'nebulab/solidus', branch: 'master'
 gem 'deface', require: false
 gem 'solidus_auth_devise'
 
-gem 'rails', '~> 5.1.0' # HACK: for broken bundler dependency resolution
+gem 'rails', '>0.a'
 
 gem 'factory_bot', '> 4.10.0'
 

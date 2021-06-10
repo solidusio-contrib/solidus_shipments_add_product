@@ -16,7 +16,7 @@ var ShipmentAddVariantView = Backbone.View.extend({
     var template = HandlebarsTemplates["variants/autocomplete_stock"];
     var $stock_details = this.$('#stock_details');
     Spree.ajax({
-      url: Spree.routes.variants_api + "/" + variant_id,
+      url: Spree.pathFor('api/variants/') + variant_id,
       success: function(variant){
         $stock_details.html(template({variant: variant})).show()
       }
