@@ -15,7 +15,7 @@ gem 'factory_bot', '> 4.10.0'
 if ENV['DB'] == 'mysql'
   gem 'mysql2', '~> 0.4.10'
 else
-  gem 'pg', '~> 0.21'
+  gem 'pg', '~> 1.3'
 end
 
 group :test do
