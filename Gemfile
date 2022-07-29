@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 # currently this gem extension is compatible only with Solidus master:
-gem 'solidus', github: 'nebulab/solidus', branch: 'master'
+gem 'solidus', github: 'solidusio/solidus', branch: 'master'
 
 gem 'deface', require: false
 gem 'solidus_auth_devise'
